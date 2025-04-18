@@ -6,4 +6,20 @@
 
 body {
     min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid {
+    box-sizing: content-box;
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 600px;
+    border: 1px solid black;
+}
+
+.cell {
+    border: 1px solid black;
 }
