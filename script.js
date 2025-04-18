@@ -7,7 +7,12 @@ const createGridCell = (dimensions) => {
     cell.classList.add("cell");
     cell.style.width = size;
     cell.style.height = size;
+    cell.addEventListener("mouseenter", handleCellHover);
     return cell;
+}
+
+const handleCellHover = (e) => {
+    e.target.style.backgroundColor = "black";
 }
 
 const fillGrid = (dimensions = 16) => {
