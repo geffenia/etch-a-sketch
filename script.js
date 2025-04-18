@@ -1,6 +1,7 @@
 const GRIDSIZE = 600;
 const grid = document.querySelector(".grid");
 const resizeButton = document.querySelector(".resize");
+let opacity = 0.1;
 
 const createGridCell = (dimensions) => {
     const size = `${GRIDSIZE / dimensions}px`;
@@ -25,7 +26,10 @@ const addResizeEvent = () => {
 
 const handleCellHover = (e) => {
     const color = createRGBColor();
-    e.target.style.backgroundColor = `rgb(${color[0]},${color[1]}, ${color[2]})`;
+    e.target.style.backgroundColor = `rgba(${color[0]},${color[1]}, ${color[2]},${opacity})`;
+    if (opacity < 1) {
+        opacity += 0.1;
+    }
 }
 
 const fillGrid = (dimensions = 16) => {
