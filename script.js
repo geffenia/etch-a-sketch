@@ -24,13 +24,22 @@ const addResizeEvent = () => {
 }
 
 const handleCellHover = (e) => {
-    e.target.style.backgroundColor = "black";
+    const color = createRGBColor();
+    e.target.style.backgroundColor = `rgb(${color[0]},${color[1]}, ${color[2]})`;
 }
 
 const fillGrid = (dimensions = 16) => {
     for (let i = 0; i < dimensions * dimensions; i++) {
         grid.append(createGridCell(dimensions));
     }
+}
+
+const createRGBColor = () => {
+    const rgb = [];
+    for (let i = 0; i < 3; i++) {
+        rgb.push(Math.floor(Math.random() * 256));
+    }
+    return rgb;
 }
 
 fillGrid();
